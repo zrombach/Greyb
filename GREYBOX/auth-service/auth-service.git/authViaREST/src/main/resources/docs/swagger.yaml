@@ -1,0 +1,58 @@
+swagger: "2.0"
+info: 
+ version: "Tier7 v2 1.20"
+ title: "Authorization Service"
+schemes:
+  - https
+paths: 
+ /users: 
+   get:
+    summary: "This operation authenticates the user the given password.  It leverages the user's NT password by connecting to the corporate active directory server to validate the username and password.  It checks our service directory first and then fails over to the specified DOMAIN."
+    produces: 
+      - application/json
+      - application/xml
+    consumes:
+      - application/json
+      - application/xml
+    responses:
+      "404":
+        description: User Not Found
+      "200": 
+        description: Successful operation
+        schema: 
+          $ref: "#/definitions/User"
+definitions:
+  User:
+    required:
+      - dn
+      - fullName
+      - lastName
+    properties:
+      dn:
+        type: string
+        description: "User DN"
+      displayName:
+        type: string
+        description: "display name"
+      fullName: 
+        type: string
+        description: "full (common) name"
+      lastName:
+        type: string
+        description: "last name or surname"
+      email:
+        type: string
+        description: "email address"
+      employeeId:
+        type: string
+        description: "EMPLID"
+      personalTitle:
+        type: string
+        description: "personal title"
+      secureTelephoneNumber:
+        type: string
+        description: "secure telephone number"
+      
+        
+        
+    

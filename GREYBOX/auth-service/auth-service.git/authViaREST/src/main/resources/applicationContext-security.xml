@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:sec="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+	
+	<sec:http pattern="/extras/**" security="none" />
+	<sec:http pattern="/admin/**" security="none" />
+		
+	<!--  treat any user with a valid cert as a workable user.  Still need to handle concept of Admin as we add post for clients -->
+	<bean name="certUserService" class="gov.lab24.auth.security.CertIdentifiedUserDetails" />
+
+	<beans profile="default">	
+		<sec:http create-session="never">	
+			<sec:intercept-url pattern="/**" access="ROLE_USER" method="GET"/>
+			<sec:intercept-url pattern="/**" access="ROLE_USER" />
+			<!--  default would be "CN=(.*?),", but we want OU, etc -->
+			<sec:x509 subject-principal-regex="CN=(.*?)$" user-service-ref="certUserService" />
+		</sec:http>
+
+		<sec:authentication-manager />	<!--  use default -->
+	</beans>
+
+	<beans profile="test">		
+		<sec:http create-session="never">	
+			<sec:intercept-url pattern="/**" access="ROLE_USER" method="GET"/>
+			<sec:intercept-url pattern="/**" access="ROLE_USER" />
+			<sec:http-basic />	<!--  though we're only setting up a user service in test mode -->
+		</sec:http>
+
+		<sec:authentication-manager>
+			<sec:authentication-provider>
+				<sec:user-service>
+					<sec:user name="foo" password="test" authorities="ROLE_USER" />
+					<sec:user name="bar" password="test" authorities="ROLE_USER, ROLE_ADMIN" />
+				</sec:user-service>
+			</sec:authentication-provider>
+		</sec:authentication-manager>
+	</beans>
+</beans>
+

@@ -1,0 +1,54 @@
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "user": {
+      "format": "card",
+      "user": [
+        "foo"
+      ],
+      "records": [
+        {
+          "uid": "foo....",
+          "sid": "foo",
+          "name": "Foo Bar Baz",
+          "identity": {
+            "id": {
+              "uid": "foo.....",
+              "sid": "foo",
+              "unix": "#####",
+              "dn": "CN=Baz Foo Bar foo, OU=D00X, O=U.S. government, C=US",
+              "certificates": {
+                "sign": [],
+                "encrypt": []
+              }
+            },
+            "name": {
+              "full": "Foo Bar Baz",
+              "given": "Foo",
+              "middle": "Bar",
+              "sur": "Baz",
+              "cn": "Baz Foo Bar foo",
+              "title": null,
+              "rank": null
+            }
+          },
+          "contact": {
+            "email": "",
+            "phone": {}
+          },
+          "location": {
+            "building": "",
+            "room": "",
+            "suite": ""
+          },
+          "org": {
+            "company": "",
+            "unit": "S900",
+            "current": "S900"
+          }
+        }
+      ]
+    }
+  }
+}

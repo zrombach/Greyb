@@ -1,0 +1,10 @@
+{
+
+	"title": "/groups /dn schema for response",
+	"version": "T7 v2.x",		
+	"type": "object",
+	"properties": {
+		"dn": { "type": "string", "description": "group DN"},
+		},	
+	"required": ["dn"]			
+}

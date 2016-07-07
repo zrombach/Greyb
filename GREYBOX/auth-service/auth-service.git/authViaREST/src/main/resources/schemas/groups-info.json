@@ -1,0 +1,17 @@
+{
+
+	"title": "/groups /info schema for request",
+	"version": "T7 v2.x",		
+	"type": "object",
+	"properties": {
+		"dn": { "type": "string", "optional": true, "description": "group DN"},
+		"name": {"type": "string", "optional": true, "description": "(common) name"},		
+		"displayName": {"type": "string", "optional": true, "description": "display name"},
+		"description": {"type": "string", "optional": true, "description": "description"},
+		"clearance": {"type": "string", "optional": true, "description": "classification level of group name"},
+		"formalAccesses": {"type": "array", "optional": true, "items": {"type": "string"}, "description": "formal accesses applied to group name"},
+		"private": {"type": "boolean", "optional": true, "description": "true or false privacy flag"},
+		"visible": {"type": "boolean", "optional": true, "description": "true or false visibility flag"}
+		},	
+	"required": []			
+}

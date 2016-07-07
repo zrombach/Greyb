@@ -1,0 +1,15 @@
+/bin/
+/target/
+/.project
+/.classpath
+/.settings/
+/logs/
+../gpk/
+../testinfrastructure/
+authviarest.tar
+.idea
+*.iml
+build_tag
+devConfig.yml
+/verifyLogs
+verifyTest.jar

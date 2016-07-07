@@ -1,0 +1,78 @@
+version: foo.bar
+
+springSecurityConfiguration: ['classpath:applicationContext-security.xml']
+
+datasource:
+   type: mongo
+   host: mongo
+   #port:  use default
+   db: mongo-user
+  #- type: mysql
+  #  host: foo
+  #  port: 14
+  # db: mysql-user
+
+# Information below used for tasks for verifying/testing responses returned for varying environments    
+#  Using JSON structure for string of information associated with environment.
+#  Potentially better solution is to use dropwizard configuration items.  Mimicking logging.loggers approach.  logging.appenders assumes concrete types
+verifyEnv:
+  verifyLogsLocation: ./verifyLogs/
+  environments:
+    "self": '{ "baseURL": "https://localhost:8443", "keyStorePath": "./testcerts/localhost.jks", "keyStorePassword": "OBF:1v2j1uum1xtv1zej1zer1xtn1uvk1v1v", "isPasswordEncrypted": "true", "usernames": ["foo", "contractor", "government", "server"], "projectnames": [], "groupnames":[] }'
+    "ede":
+    "production":
+  endpoints:
+    #v2
+    '/users/[username]': 'info-short'
+    '/users/[username]/info': 'info-long'
+    '/users/[username]/dn': 
+        
+    #v3
+
+server:
+  applicationConnectors:
+      - type: http
+        port: 8080
+      - type: https
+        port: 8443
+        keyStorePath: ./testcerts/keystore.jks
+        # use java -cp jetty-util-9.0.7.v20131107.jar  org.eclipse.jetty.util.security.Password
+        keyStorePassword: changeme
+        validateCerts: false
+        needClientAuth: false
+        wantClientAuth: true
+  adminConnectors:
+      - type: http
+        port: 8081
+      - type: https
+        port: 8444
+        keyStorePath: ./testcerts/keystore.jks
+        keyStorePassword: changeme
+        validateCerts: false
+        needClientAuth: false
+
+logging:
+  level: TRACE
+  loggers:
+    "org.springframework": DEBUG
+    "gov.lab24.auth": DEBUG
+    "org.eclipse.jetty": WARN
+  appenders:
+    - type: console
+      threshold: INFO
+      target: stderr
+    - type: file
+      threshold: TRACE
+      currentLogFilename: ./logs/authService.log
+      archivedLogFilenamePattern: ./logs/authService-%d.log.gz
+      archivedFileCount: 3
+      timeZone: UTC
+
+    # - type: syslog
+    #   host: localhost
+    #   facility: local0    
+
+     
+    
+    
+  

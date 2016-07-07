@@ -1,0 +1,15 @@
+.Datagrid_table {
+    table-layout:fixed;
+}
+
+.Datagrid_table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Datagrid_selected_row td {
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+}

@@ -1,0 +1,39 @@
+{
+	"title": "/users /info schema",
+	"version": "T7 v2.x",
+	"type": "object",
+	"properties": {
+		"dn": { "type": "string", "description": "CASPORT user DN*"},
+		"displayName": {"type": "string", "optional": true, "description": "display name*"},
+		"fullName": {"type": "string", "description": "full (common) name*"},
+		"firstName": {"type": "string", "optional": true, "description": "first or given name*"},
+		"lastName": {"type": "string", "description": "last name or surname*"},
+		"email": {"type": "string", "optional": true, "format": "email", "description": "email address*"},
+		"employeeId": {"type": "string", "optional": true, "description": "EMPLID"},
+		"personalTitle": {"type": "string", "optional": true, "description": "personal title*"},
+		"secureTelephoneNumber": {"type": "string", "optional": true, "description": "secure telephone number*"},
+		"telephoneNumber": {"type": "string", "optional": true, "description": "non-secure telephone number*"},
+		"uid": {"type": "string", "description": "sid*"},
+		"clearances": {"type": "string", "optional": true, "description" : "clearance level",
+			"enum": ["SECRET", "TOP SECRET", "UNCLASSIFIED", "CONFIDENTIAL"]},
+		"formalAccess": {"type": "array", "optional": true, "items": {"type": "string"}, "description": "formal accesses"},
+		"coi": {"type": "array", "optional": true, "items": {"type": "string"}, "description": "COIs"},
+		"briefing": {"type": "array", "optional": true, "items": {"type": "string"}, "description": "briefings"},
+		"formalGroup": {"type": "array", "optional": true, "items": {"type": "string"}, "description": "formal groups"},
+		"citizenshipStatus": {"type": "string", "optional": true, "description": "citizenship status",
+			"enum": ["NATURALIZED US", "NOT INDICATED", "OTHER", "US"]},
+		"country": {"type": "string", "optional": true, "description": "country",
+			"enum": ["AUS", "CAN", "GBR", "NZL", "UNK", "USA"]},
+		"grantBy": {"type": "array", "optional": true, "items": {"type": "string"}, "description": "entities that granted user clearance"},
+		"organization": {"type": "array", "optional": true, "items": {"type": "string"}, "description": "organizations"},
+		"affiliation": {"type": "array", "optional": true, "items": {"type": "string",
+			"enum": ["CANDIDATE", "CONSULTANT", "CONTRACTOR", "EMPLOYEE", "MILITARY", "NON-AGENCY", "NON-AGENCY CIVILIAN", "NON-AGENCY CONTRACTOR", "NON-AGENCY MILITARY"]
+			}, "description": "affiliations"},
+		"dissemControl": {"type": "array", "optional": true, "items": {"type": "string"}, "description": "NTK dissemination controls"},
+		"dissemTo": {"type": "array", "optional": true, "items": {"type": "string"}, "description": "NTK disseminate to"},
+		"__comment": "ignoring two items not needed for this environment",
+		"title": {"type": "string", "optional": true, "description": "official title"}
+
+	},
+	"required": ["dn", "fullName", "lastName", "uid"]
+}

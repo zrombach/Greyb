@@ -1,0 +1,7 @@
+{
+  "CertSettings": {
+    "key": "/testcerts/key.pem",
+    "cert": "/testcerts/crt.pem"
+  },
+  "Port": 9443
+}
