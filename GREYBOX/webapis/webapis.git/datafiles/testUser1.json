@@ -1,0 +1,54 @@
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "user": {
+      "format": "card",
+      "user": [
+        "testUser1"
+      ],
+      "records": [
+        {
+          "uid": "testUser1..",
+          "sid": "testUser1",
+          "name": "Test User One",
+          "identity": {
+            "id": {
+              "uid": "testUser1...",
+              "sid": "testUser1",
+              "unix": "#####",
+              "dn": "CN=One Test User testUser1, OU=D00X, O=U.S.Government, C=US",
+              "certificates": {
+                "sign": [],
+                "encrypt": []
+              }
+            },
+            "name": {
+              "full": "Test User One",
+              "given": "Test",
+              "middle": "User",
+              "sur": "One",
+              "cn": "One Test User testUser1",
+              "title": null,
+              "rank": null
+            }
+          },
+          "contact": {
+            "email": "",
+            "phone": {}
+          },
+          "location": {
+            "building": "",
+            "room": "",
+            "suite": ""
+          },
+          "org": {
+            "company": "",
+            "unit": "S000",
+            "current": "S000"
+          }
+        }
+      ]
+    }
+  }
+}

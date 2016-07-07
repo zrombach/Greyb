@@ -1,0 +1,35 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/alecthomas/kingpin",
+			"repository": "https://github.com/alecthomas/kingpin",
+			"revision": "aedd5430ecd39ba1396fee0c00308b494c552b1e",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/alecthomas/template",
+			"repository": "https://github.com/alecthomas/template",
+			"revision": "b867cc6ab45cece8143cfcc6fc9c77cf3f2c23c0",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/alecthomas/units",
+			"repository": "https://github.com/alecthomas/units",
+			"revision": "6b4e7dc5e3143b85ea77909c72caf89416fc2915",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/fsouza/go-dockerclient",
+			"repository": "https://github.com/fsouza/go-dockerclient",
+			"revision": "af9789bbd78acf3e279274caa54682185eb7ed33",
+			"branch": "master"
+		},
+		{
+			"importpath": "gopkg.in/alecthomas/kingpin.v2",
+			"repository": "https://gopkg.in/alecthomas/kingpin.v2",
+			"revision": "72bf19f454c6822cfb2cf128c77ef8d70667df35",
+			"branch": "master"
+		}
+	]
+}

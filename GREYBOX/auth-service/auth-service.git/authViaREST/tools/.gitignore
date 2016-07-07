@@ -1,0 +1,17 @@
+/foo.crt
+/foo.csr
+/foo.key
+/foo.p12
+/localhost.crt
+/localhost.csr
+/localhost.jks
+/localhost-ca.crt
+/localhost-ca.key
+/user_foo.crt
+/user_foo.csr
+/user_foo.key
+/user1.crt
+/user1.csr
+/user1.key
+/user2.csr
+/user2.key

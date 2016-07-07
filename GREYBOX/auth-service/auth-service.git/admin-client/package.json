@@ -1,0 +1,58 @@
+{
+  "name": "auth-client",
+  "version": "0.1.0",
+  "description": "",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.1",
+    "es6-promise": "^2.3.0",
+    "fakexmlhttprequest": "0.0.1",
+    "font-awesome": "^4.2.0",
+    "jquery": "^2.1.3",
+    "lodash": "^2.4.1",
+    "object-assign": "2.0.0",
+    "react": "0.12.1",
+    "react-loader": "^1.4.0",
+    "react-router": "0.11.6",
+    "reflux": "0.2.3",
+    "tcomb-form": "0.3.0-rc2",
+    "tcomb-json-schema": "0.1.1"
+  },
+  "devDependencies": {
+    "jest-cli": "^0.4.13",
+    "webpack": "^1.9.11",
+    "webpack-dev-server": "^1.9.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "sass-loader": "^1.0.2",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "react-hot-loader": "^1.2.7",
+    "raw-loader": "^0.5.1",
+    "node-sass": "^3.2.0",
+    "file-loader": "^0.8.4",
+    "html-loader": "^0.3.0",
+    "babel-core": "^5.5.8",
+    "babel-loader": "^5.1.4",
+    "babel-runtime": "^5.5.8",
+    "css-loader": "^0.14.5"
+  },
+  "scripts": {
+    "test": "jest",
+    "test-debug": "node-debug ./node_modules/.bin/jest",
+    "dev-server": "rm -rf node_modules/tcomb-form/node_modules/react && mkdir -p dist && webpack-dev-server --config webpack-dev-server.config.js --progress --colors --port 2992 --inline",
+    "build": "rm -rf node_modules/tcomb-form/node_modules/react && mkdir -p dist && webpack --config webpack-production.config.js --progress --profile --colors"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/jest/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/reflux",
+      "<rootDir>/node_modules/object-assign",
+      "<rootDir>/node_modules/lodash",
+      "<rootDir>/node_modules/tcomb-form",
+      "<rootDir>/node_modules/fakexmlhttprequest"
+    ],
+    "testPathDirs": [
+      "<rootDir>/app/js/actions"
+    ]
+  }
+}

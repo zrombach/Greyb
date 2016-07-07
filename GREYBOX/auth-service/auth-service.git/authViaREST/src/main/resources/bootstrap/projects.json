@@ -1,0 +1,77 @@
+[
+  {
+    "name":"FakeProject",
+    "readers":[],
+    "editors":[],
+    "servers":[],
+    "projectGroups":[
+      {
+        "dn" : "cn=FakeGroup,o=MyCa Org,c=US",
+        "name" : "FakeProject!FakeGroup",
+        "formalAccesses" : [],
+        "visible" : false,
+        "members" : [
+          "cn=usNACnotInGander,o=MyCa Org,c=US",
+          "cn=usNACnotInZoom,o=MyCa Org,c=US",
+          "cn=usCiv,o=MyCa Org,c=US",
+          "cn=usMil,o=MyCa Org,c=US",
+          "cn=usCon,o=MyCa Org,c=US",
+          "cn=usOtherAgency,o=MyCa Org,c=US",
+          "cn=testUser1,o=MyCa Org,c=US"
+        ],
+        "private" : false
+      }
+    ],
+    "owners":[
+      "cn=usCiv,o=MyCa Org,c=US"
+    ]
+  },
+  {
+    "name":"ZoomProject",
+    "readers":[],
+    "editors":[],
+    "servers":[],
+    "projectGroups":[
+      {
+        "dn" : "cn=ZoomGroup,o=MyCa Org,c=US",
+        "name" : "ZoomProject!ZoomGroup",
+        "formalAccesses" : [],
+        "visible" : false,
+        "members" : [
+          "cn=usNACinZoom,o=MyCa Org,c=US",
+          "cn=usCiv,o=MyCa Org,c=US",
+          "cn=usMil,o=MyCa Org,c=US",
+          "cn=usCon,o=MyCa Org,c=US"
+        ],
+        "private" : false
+      }
+    ],
+    "owners":[
+      "cn=usCiv,o=MyCa Org,c=US"
+    ]
+  },
+  {
+    "name":"GanderProject",
+    "readers":[],
+    "editors":[],
+    "servers":[],
+    "projectGroups":[
+      {
+        "dn" : "cn=GanderGroup,o=MyCa Org,c=US",
+        "name" : "GanderProject!GanderGroup",
+        "formalAccesses" : [],
+        "visible" : false,
+        "members" : [
+          "cn=usCiv,o=MyCa Org,c=US",
+          "cn=usMil,o=MyCa Org,c=US",
+          "cn=usCon,o=MyCa Org,c=US",
+          "cn=usNACinGander,o=MyCa Org,c=US"
+        ],
+        "private" : false
+      }
+    ],
+    "owners":[
+      "cn=usCiv,o=MyCa Org,c=US"
+    ]
+  }
+]

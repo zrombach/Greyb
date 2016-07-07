@@ -1,0 +1,54 @@
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "user": {
+      "format": "card",
+      "user": [
+        "jjdoe"
+      ],
+      "records": [
+        {
+          "uid": "jjdoe..",
+          "sid": "jjdoe",
+          "name": "John James Doe",
+          "identity": {
+            "id": {
+              "uid": "jjdoe...",
+              "sid": "jjdoe",
+              "unix": "#####",
+              "dn": "CN=Doe John James jjdoe, OU=D00X, O=U.S.Government, C=US",
+              "certificates": {
+                "sign": [],
+                "encrypt": []
+              }
+            },
+            "name": {
+              "full": "John James Doe",
+              "given": "John",
+              "middle": "James",
+              "sur": "Doe",
+              "cn": "Doe John James jjdoe",
+              "title": null,
+              "rank": null
+            }
+          },
+          "contact": {
+            "email": "",
+            "phone": {}
+          },
+          "location": {
+            "building": "",
+            "room": "",
+            "suite": ""
+          },
+          "org": {
+            "company": "",
+            "unit": "S888",
+            "current": "S888"
+          }
+        }
+      ]
+    }
+  }
+}
