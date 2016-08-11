@@ -7,9 +7,8 @@ WORKDIR /usr/share/authport
 
 COPY build_output/authViaREST-0.0.1-SNAPSHOT.jar /usr/share/authport/bin/authViaREST-0.0.1-SNAPSHOT.jar
 
-COPY authViaREST/src/main/resources/authService
-Config.yml /usr/share/authport/config/authService
-Config.yml
+COPY authViaREST/src/main/resources/authServiceConfig.yml 
+/usr/share/authport/config/authServiceConfig.yml
 
 COPY authVia
 REST/testcerts/keystore.jks  /usr/share/authport/testcerts/keystore.jks
